@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-import mongodb_loader.mongo_config as config
+import config
 
 def query_mongodb(query_type, query, limit=None, sort=None):
     client = MongoClient(config.MONGO_URI)
@@ -31,3 +31,11 @@ def query_mongodb(query_type, query, limit=None, sort=None):
         client.close()
 
     return result
+
+if __name__ == "__main__":
+    # Example query
+    query = [
+            {"$group": {"_id": "$DOLocationID", "total_revenue": {"$sum": "$total_amount"}}}
+        ]
+    result = query_mongodb("aggregate", query, limit=10)
+    print(result)

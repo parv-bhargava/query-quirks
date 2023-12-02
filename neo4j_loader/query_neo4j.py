@@ -1,5 +1,5 @@
 from neo4j import GraphDatabase
-import neo4j_loader.neo4j_config as config
+import config
 
 class Neo4jQuery:
     def __init__(self, uri, user, password):

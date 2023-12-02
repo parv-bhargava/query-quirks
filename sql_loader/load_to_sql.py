@@ -1,6 +1,6 @@
 import pandas as pd
 import sqlalchemy
-from sql_config import SQL_HOST, SQL_USER, SQL_PASSWORD, SQL_DB
+from config import SQL_HOST, SQL_USER, SQL_PASSWORD, SQL_DB
 
 # Create SQL engine
 engine = sqlalchemy.create_engine(f'mysql+pymysql://{SQL_USER}:{SQL_PASSWORD}@{SQL_HOST}/{SQL_DB}')

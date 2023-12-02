@@ -1,6 +1,6 @@
 import pandas as pd
 from pymongo import MongoClient
-from mongo_config import MONGO_URI, MONGO_DB, MONGO_COLLECTION
+from config import MONGO_URI, MONGO_DB, MONGO_COLLECTION
 
 # Connect to MongoDB
 client = MongoClient(MONGO_URI)

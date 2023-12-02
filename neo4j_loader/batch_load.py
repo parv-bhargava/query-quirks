@@ -1,18 +1,10 @@
 from neo4j import GraphDatabase
-from neo4j_config import NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD
+
+from config import NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD
 
 # Connect to Neo4j
 driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
 
-def load_data_in_batches(file_path, batch_size):
-    total_records_processed = 0
-    with driver.session() as session:
-        while True:
-            session.write_transaction(load_batch, file_path, total_records_processed, batch_size)
-            total_records_processed += batch_size
-            print(f"Processed {total_records_processed} records...")
-            # Check if end of file is reached (e.g., by checking the number of processed rows in the batch)
-            # Break the loop if end of file is reached
 
 def load_batch(tx, file_path, skip, limit):
     query = """     
@@ -53,11 +45,25 @@ def load_batch(tx, file_path, skip, limit):
     """
     tx.run(query, file_path=file_path, skip=skip, limit=limit)
 
-# Define the batch size and file path
-batch_size = 50000  # Adjust the batch size as needed
-file_path = '../data/2020_Yellow_Taxi_Trip_Data_20231129.csv'
 
-# Start the batch loading process
-load_data_in_batches(file_path, batch_size)
+def load_data_in_batches_neo4j(file_path, batch_size, total_records_limit):
+    total_records_processed = 0
+    with driver.session() as session:
+        while True:
+            session.write_transaction(load_batch, file_path, total_records_processed, batch_size)
+            total_records_processed += batch_size
+            print(f"Processed {total_records_processed} records...")
+            # Check if end of file is reached (e.g., by checking the number of processed rows in the batch)
+            # Break the loop if the total records limit is reached
+            if total_records_processed >= total_records_limit:
+                break
+
+
+# Define the batch size and file path
+# batch_size = 50000  # Adjust the batch size as needed
+# file_path = '../data/2020_Yellow_Taxi_Trip_Data_20231129.csv'
+#
+# # Start the batch loading process
+# load_data_in_batches(file_path, batch_size)
 
 driver.close()

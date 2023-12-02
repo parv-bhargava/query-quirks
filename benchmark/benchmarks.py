@@ -31,6 +31,7 @@ def run_benchmarks():
 
     for query_name in query_names:
         # MongoDB
+        print("Running MongoDB query")
         mongo_query = queries.mongodb_queries[query_name]
         mongo_time = measure_query_time(
             query_mongodb,
@@ -41,16 +42,21 @@ def run_benchmarks():
         )
         mongo_cpu = get_cpu_usage()
         mongo_memory = get_memory_usage()
+        print("Finished MongoDB query")
 
         # SQL
+        print("Running SQL query")
         sql_time = measure_query_time(query_sql, queries.sql_queries[query_name])
         sql_cpu = get_cpu_usage()
         sql_memory = get_memory_usage()
+        print("Finished SQL query")
 
         # Neo4j
+        print("Running Neo4j query")
         neo4j_time = measure_query_time(query_neo4j, queries.neo4j_queries[query_name])
         neo4j_cpu = get_cpu_usage()
         neo4j_memory = get_memory_usage()
+        print("Finished Neo4j query")
 
         times_data[query_name] = {"SQL": sql_time, "MongoDB": mongo_time, "Neo4j": neo4j_time}
         cpu_usage_data[query_name] = {"SQL": sql_cpu, "MongoDB": mongo_cpu, "Neo4j": neo4j_cpu}
