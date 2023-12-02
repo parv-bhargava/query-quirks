@@ -61,13 +61,13 @@ def run_benchmarks():
         times_data[query_name] = {"SQL": sql_time, "MongoDB": mongo_time, "Neo4j": neo4j_time}
         cpu_usage_data[query_name] = {"SQL": sql_cpu, "MongoDB": mongo_cpu, "Neo4j": neo4j_cpu}
         memory_usage_data[query_name] = {"SQL": sql_memory, "MongoDB": mongo_memory, "Neo4j": neo4j_memory}
-        error_data[query_name] = {
-            "SQL": sql_time is None,
-            "MongoDB": mongo_time is None,
-            "Neo4j": neo4j_time is None
-        }
+        # error_data[query_name] = {
+        #     "SQL": sql_time is None,
+        #     "MongoDB": mongo_time is None,
+        #     "Neo4j": neo4j_time is None
+        # }
 
-    return times_data, cpu_usage_data, memory_usage_data, error_data, query_names
+    return times_data, cpu_usage_data, memory_usage_data, query_names
 
 # if __name__ == "__main__":
 #     query_times, cpu_usages, memory_usages, errors, queries = run_benchmarks()

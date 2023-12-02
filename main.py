@@ -5,7 +5,7 @@ from load import load
 def main():
     # Run benchmarks
     print("Running benchmarks...")
-    times_data, cpu_usage_data, memory_usage_data, error_data, query_names = run_benchmarks()
+    times_data, cpu_usage_data, memory_usage_data, query_names = run_benchmarks()
 
     # Visualize results
     if times_data:
@@ -17,8 +17,8 @@ def main():
     if memory_usage_data:
         plot_results.plot_memory_usage(memory_usage_data, query_names)
 
-    if error_data:
-        plot_results.plot_errors(error_data, query_names)
+    # if error_data:
+    #     plot_results.plot_errors(error_data, query_names)
 
 
 if __name__ == "__main__":
