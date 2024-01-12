@@ -1,4 +1,4 @@
-# QueryQuirks
+# [QueryQuirks](https://parv-bhargava.github.io/query-quirks/)
 "QueryQuirks" is a  GitHub project that focuses on the peculiar aspects or "quirks" of database queries by analyzing the performance of databases like SQL, MongoDB, Neo4J, and Hadoop. It benchmarks these systems using Python, focusing on efficiency metrics such as time, memory, and CPU usage, and offers insights for database optimization.
 
 # Data Persistence and Performance Benchmarking Suite
@@ -36,8 +36,8 @@ The methodology for the "Data Persistence and Performance Benchmarking Suite" pr
 1. **Benchmark Script (benchmarks.py):** The core benchmarking is conducted through the benchmarks.py script. This script is responsible for measuring and recording the performance metrics during query execution. It utilizes functions like measure_query_time to record the time taken for query execution, and employs the psutil library to monitor CPU and memory usage, providing a comprehensive view of each database’s performance.template.
 2. **Design and Selection of Queries:** The queries are designed to test a wide range of functionalities, including data insertion, retrieval, updates, and complex relationships (especially in Neo4J). The choice of queries seems to be influenced by their relevance to real-world applications, ensuring that the benchmarking reflects practical scenarios.
 3. **Performance Measurement Technique:**
-    -  Time Measurement: The time taken by each query is measured using Python’s time module, allowing for precise measurement of execution duration.
-    -  CPU and Memory Usage Measurement: The psutil library is used to monitor CPU and memory usage during the execution of queries. This approach provides insights into how each query impacts the system resources.
+    -  **Time Measurement:** The time taken by each query is measured using Python’s time module, allowing for precise measurement of execution duration.
+    -  **CPU and Memory Usage Measurement:** The psutil library is used to monitor CPU and memory usage during the execution of queries. This approach provides insights into how each query impacts the system resources.
 4. **Result Plotting Script (plot_results.py):** The plot_results.py script is used to visualize the results of the benchmarks. It generates plots for query times, CPU usage, and memory usage, enabling a clear and visual comparison across different databases and queries.
 5. **Main Execution Script (main.py):** The main.py script is the driver script that orchestrates the benchmarking process. It calls the necessary functions to run benchmarks and plot results, ensuring a streamlined execution of the project.
 
@@ -140,20 +140,20 @@ The JVM garbage collection time and shuffle write time were relatively low acros
 
 ### Comparative Analysis
 Performance Comparison Under Different Conditions
-1. Scalability: MongoDB showed the least performance degradation when scaling from 50,000 to 100,000 records, indicating better scalability.
-2. Complex Queries: SQL struggled with complex same_pickup_dropOff queries at scale, suggesting that query optimization may be required for larger datasets.
-3. Read vs. Write Operations: Neo4j showed better performance in read operations (select_basic) for smaller datasets but had higher CPU usage for write operations (update_fare), particularly at scale.
+1. **Scalability:** MongoDB showed the least performance degradation when scaling from 50,000 to 100,000 records, indicating better scalability.
+2. **Complex Queries:** SQL struggled with complex same_pickup_dropOff queries at scale, suggesting that query optimization may be required for larger datasets.
+3. **Read vs. Write Operations:** Neo4j showed better performance in read operations (select_basic) for smaller datasets but had higher CPU usage for write operations (update_fare), particularly at scale.
 
 ### Strengths and Weaknesses of Each Database System in Various Scenarios
-1. SQL:
-    - Strengths: Good performance on simple read operations, lower memory usage at higher data volumes.
-    - Weaknesses: Poor scalability for complex queries, higher memory usage for smaller datasets.
-2. MongoDB:
-    - Strengths: Consistent performance across different query types and scales, efficient in complex queries.
-    - Weaknesses: Slight increase in CPU and memory usage as data volume grows.
-3. Neo4j:
-    - Strengths: Efficient memory usage in most scenarios, good performance in write operations at larger scales.
-    - Weaknesses: High CPU usage, and performance inconsistency between read and write operations.
+1. **SQL:**
+    - **Strengths:** Good performance on simple read operations, lower memory usage at higher data volumes.
+    - **Weaknesses:** Poor scalability for complex queries, higher memory usage for smaller datasets.
+2. **MongoDB:**
+    - **Strengths:** Consistent performance across different query types and scales, efficient in complex queries.
+    - **Weaknesses**: Slight increase in CPU and memory usage as data volume grows.
+3. **Neo4j:**
+    - **Strengths:** Efficient memory usage in most scenarios, good performance in write operations at larger scales.
+    - **Weaknesses:** High CPU usage, and performance inconsistency between read and write operations.
 
 ## Discussion
 The benchmarking results highlight the nuanced performance profiles of SQL, MongoDB, and Neo4j across various operations. SQL databases showed proficiency in simple queries but faltered in more complex join operations at scale, indicating a potential trade-off between performance and complexity. MongoDB demonstrated a balance of time efficiency and scalability, maintaining consistent throughput across query types, suggesting its suitability for varied workloads. Neo4j excelled in memory efficiency, but its CPU usage patterns suggest a more cautious approach is needed when considering it for write-intensive applications.
@@ -199,9 +199,9 @@ Additionally, we extend heartfelt appreciation to each member of our group whose
 
 - Do, T. T. T., Mai-Hoang, T. B., Nguyen, V. Q., & Huynh, Q. T. (2022, December). Query-based Performance Comparison of Graph Database and Relational Database. In Proceedings of the 11th International Symposium on Information and Communication Technology (pp. 375-381).
 
-- Stackoverflow
-- pymngo
--  neo4J
-- sqlalchemy
-- NYU Taxi Data
+- [Stackoverflow](https://stackoverflow.com/)
+- [pymngo](https://pymongo.readthedocs.io/en/stable/)
+- [neo4J](https://neo4j.com/docs/)
+- [sqlalchemy](https://docs.sqlalchemy.org/en/20/)
+- [NYU Taxi Data](https://data.cityofnewyork.us/Transportation/2018-Yellow-Taxi-Trip-Data/t29m-gskq)
 
