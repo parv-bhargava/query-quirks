@@ -71,12 +71,19 @@ Each of these systems brings distinct advantages and challenges to the table. By
 [Add your results and analysis here]
 
 ### Time Efficiency Results
-![Time Efficiency Results](URL-to-image)
+<p align="center">
+    <img src="assets/50k/Time.jpg" alt="Time Efficiency Results 50K" width="500" height="300">
+</p>
+
 
 #### For 50,000 records:
 - SQL demonstrated superior time efficiency for select_basic and total_fare_over_2_miles queries but was significantly slower for the same_pickup_dropOff query.
 - MongoDB showed consistently good performance across all queries, with the most notable efficiency in same_pickup_dropOff.
 - Neo4j had varied results, with slower responses for select_basic and update_fare queries, but it was competitive for total_fare_over_2_miles.
+
+<p align="center">
+<img src="assets/100k/Time.jpg" alt="Time Efficiency Results 100K" width="500" height="300">
+</p>
 
 #### For 100,000 records:
 - The time efficiency for SQL decreased notably for same_pickup_dropOff, indicating a potential scalability issue with complex queries.
@@ -84,24 +91,36 @@ Each of these systems brings distinct advantages and challenges to the table. By
 - Neo4j’s performance for select_basic queries degraded with more data, while it managed to handle update_fare more efficiently.
 
 ### Memory Usage Results
-![Memory Usage Results](URL-to-image)
+<p align="center">
+<img src="assets/50k/Memory.jpg" alt="Memory Usage Results 50K" width="500" height="300">
+</p>
 
 #### For 50,000 records:
 - SQL consistently used more memory than MongoDB and Neo4j for all queries.
 - MongoDB had a notable spike in memory for same_pickup_dropOff queries, suggesting an area for optimization.
 - Neo4j showed the least memory usage overall, except for total_fare_over_2_miles where it peaked above SQL.
 
+<p align="center">
+<img src="assets/100k/Memory.jpg" alt="Memory Usage Results 100K" width="500" height="300">
+</p>
+
 #### For 100,000 records:
 - The pattern of memory usage for SQL and Neo4j remained like the 50,000 records case, with SQL using more memory.
 - MongoDB’s memory usage pattern changed, with update fare now consuming more memory than the other queries.
 
 ### CPU Utilization Results
-![CPU Utilization Results](URL-to-image)
+<p align="center">
+<img src="assets/50k/CPU.jpg" alt="CPU Utilization Results 50K" width="500" height="300">
+</p>
 
 #### For 50,000 records:
 - SQL showed moderate CPU usage across all queries, with the least usage for update fare.
 - MongoDB’s CPU usage was slightly higher than SQL’s for most queries except for same_pickup_dropOff.
 - Neo4j had the highest CPU usage for select basic and update fare queries.
+
+<p align="center">
+<img src="assets/100k/CPU.jpg" alt="CPU Utilization Results 100K" width="500" height="300">
+</p>
 
 #### For 100,000 records:
 - SQL's CPU usage pattern remained consistent, with only a slight increase across all queries.
