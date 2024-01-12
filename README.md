@@ -30,6 +30,7 @@ The methodology for the "Data Persistence and Performance Benchmarking Suite" pr
 ### Python Scripts for Data Loading and Query Execution
 1. **Data Loading Scripts (batch_load.py, load.py):** These scripts facilitate the loading of data into each of the databases. The load.py script appears to be the main entry point for initiating the data loading process. It uses batch_load.py scripts specific to each database, which include functions to handle data in batches, ensuring efficiency and manageability. For instance, the MongoDB loading script (batch_load.py) employs the pandas library to process data in chunks, inserting them into the database using the PyMongo driver.
 2. **Query Execution Scripts (query_mongo.py, query_neo4j.py, query_sql.py):** These scripts contain functions to execute various types of queries specific to each database. They are designed to handle different query operations, such as find and aggregate in MongoDB. The scripts establish connections to their respective databases and execute the provided queries, returning the results or handling exceptions as needed.
+
 ### Benchmarking Process
 1. **Benchmark Script (benchmarks.py):** The core benchmarking is conducted through the benchmarks.py script. This script is responsible for measuring and recording the performance metrics during query execution. It utilizes functions like measure_query_time to record the time taken for query execution, and employs the psutil library to monitor CPU and memory usage, providing a comprehensive view of each database’s performance.template.
 2. **Design and Selection of Queries:** The queries are designed to test a wide range of functionalities, including data insertion, retrieval, updates, and complex relationships (especially in Neo4J). The choice of queries seems to be influenced by their relevance to real-world applications, ensuring that the benchmarking reflects practical scenarios.
@@ -38,6 +39,7 @@ The methodology for the "Data Persistence and Performance Benchmarking Suite" pr
     -  CPU and Memory Usage Measurement: The psutil library is used to monitor CPU and memory usage during the execution of queries. This approach provides insights into how each query impacts the system resources.
 4. **Result Plotting Script (plot_results.py):** The plot_results.py script is used to visualize the results of the benchmarks. It generates plots for query times, CPU usage, and memory usage, enabling a clear and visual comparison across different databases and queries.
 5. **Main Execution Script (main.py):** The main.py script is the driver script that orchestrates the benchmarking process. It calls the necessary functions to run benchmarks and plot results, ensuring a streamlined execution of the project.
+
 ### Database Systems Under Study
 - **SQL**: [Add details]
 - **MongoDB**: [Add details]
