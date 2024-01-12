@@ -73,11 +73,68 @@ Each of these systems brings distinct advantages and challenges to the table. By
 ### Time Efficiency Results
 ![Time Efficiency Results](URL-to-image)
 
+#### For 50,000 records:
+- SQL demonstrated superior time efficiency for select_basic and total_fare_over_2_miles queries but was significantly slower for the same_pickup_dropOff query.
+- MongoDB showed consistently good performance across all queries, with the most notable efficiency in same_pickup_dropOff.
+- Neo4j had varied results, with slower responses for select_basic and update_fare queries, but it was competitive for total_fare_over_2_miles.
+
+#### For 100,000 records:
+- The time efficiency for SQL decreased notably for same_pickup_dropOff, indicating a potential scalability issue with complex queries.
+- MongoDB maintained consistent performance across the board, suggesting good scalability.
+- Neo4j’s performance for select_basic queries degraded with more data, while it managed to handle update_fare more efficiently.
+
 ### Memory Usage Results
 ![Memory Usage Results](URL-to-image)
 
+#### For 50,000 records:
+- SQL consistently used more memory than MongoDB and Neo4j for all queries.
+- MongoDB had a notable spike in memory for same_pickup_dropOff queries, suggesting an area for optimization.
+- Neo4j showed the least memory usage overall, except for total_fare_over_2_miles where it peaked above SQL.
+
+#### For 100,000 records:
+- The pattern of memory usage for SQL and Neo4j remained like the 50,000 records case, with SQL using more memory.
+- MongoDB’s memory usage pattern changed, with update fare now consuming more memory than the other queries.
+
 ### CPU Utilization Results
 ![CPU Utilization Results](URL-to-image)
+
+#### For 50,000 records:
+- SQL showed moderate CPU usage across all queries, with the least usage for update fare.
+- MongoDB’s CPU usage was slightly higher than SQL’s for most queries except for same_pickup_dropOff.
+- Neo4j had the highest CPU usage for select basic and update fare queries.
+
+#### For 100,000 records:
+- SQL's CPU usage pattern remained consistent, with only a slight increase across all queries.
+- MongoDB displayed an increase in CPU usage for total_fare_over_2_miles and same_pickup_dropOff queries.
+- Neo4j’s CPU usage increased for select basic but decreased for update fare, showing an unpredictable scaling pattern.
+
+### Results and Analysis for Hadoop
+Our examination of big data processing within the Hadoop ecosystem, utilizing PySpark, revealed insightful performance metrics across different scales. Queries were executed on datasets of 5 million and 24 million records to simulate realistic and challenging data processing scenarios. The metrics included the number of stages and tasks, elapsed time, executor run time, CPU time, JVM garbage collection time, shuffle write time, peak execution memory, as well as the records and bytes read. These measures offer a nuanced view of PySpark's performance characteristics.
+
+- **Query 1:** demonstrated exceptional scalability. Despite increasing the dataset size from 5 million to 24 million records, the elapsed time decreased from 26 seconds to 23 seconds, suggesting efficient parallel processing and optimal use of cluster resources. The executor run time and CPU time also reflected a marginal decrease, further indicating that Query 1 is highly optimized for larger datasets.
+
+- **Query 2:** showed increased elapsed time with larger data volumes, from 49 seconds for 5 million records to 43 seconds for 24 million records, implying a good scale but with diminishing returns as data size grows. Notably, the executor run time and CPU time saw a reduction, indicating that while the query took longer, it utilized resources more efficiently with the larger dataset.
+
+- **Query 3:** presented a different pattern; it required more stages and tasks, which could indicate a more complex data processing operation. The elapsed time increased from 1.2 minutes to 56 seconds when scaling from 5 million to 24 million records, suggesting that the complexity of the query affects its scalability. Executor run time and CPU time both decreased, reflecting a more effective resource utilization at scale.
+
+The JVM garbage collection time and shuffle write time were relatively low across all queries, suggesting that memory management and data shuffling were handled efficiently by PySpark. The peak execution memory was significantly higher for Query 3 on the 24 million record dataset, indicating a memory-intensive operation, likely due to the increased complexity and data size.
+
+### Comparative Analysis
+Performance Comparison Under Different Conditions
+1. Scalability: MongoDB showed the least performance degradation when scaling from 50,000 to 100,000 records, indicating better scalability.
+2. Complex Queries: SQL struggled with complex same_pickup_dropOff queries at scale, suggesting that query optimization may be required for larger datasets.
+3. Read vs. Write Operations: Neo4j showed better performance in read operations (select_basic) for smaller datasets but had higher CPU usage for write operations (update_fare), particularly at scale.
+
+### Strengths and Weaknesses of Each Database System in Various Scenarios
+1. SQL:
+    - Strengths: Good performance on simple read operations, lower memory usage at higher data volumes.
+    - Weaknesses: Poor scalability for complex queries, higher memory usage for smaller datasets.
+2. MongoDB:
+    - Strengths: Consistent performance across different query types and scales, efficient in complex queries.
+    - Weaknesses: Slight increase in CPU and memory usage as data volume grows.
+3. Neo4j:
+    - Strengths: Efficient memory usage in most scenarios, good performance in write operations at larger scales.
+    - Weaknesses: High CPU usage, and performance inconsistency between read and write operations.
 
 ## Discussion
 The benchmarking results highlight the nuanced performance profiles of SQL, MongoDB, and Neo4j across various operations. SQL databases showed proficiency in simple queries but faltered in more complex join operations at scale, indicating a potential trade-off between performance and complexity. MongoDB demonstrated a balance of time efficiency and scalability, maintaining consistent throughput across query types, suggesting its suitability for varied workloads. Neo4j excelled in memory efficiency, but its CPU usage patterns suggest a more cautious approach is needed when considering it for write-intensive applications.
