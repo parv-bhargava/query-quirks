@@ -1,4 +1,5 @@
 # QueryQuirks
+"QueryQuirks" is a  GitHub project that focuses on the peculiar aspects or "quirks" of database queries by analyzing the performance of databases like SQL, MongoDB, Neo4J, and Hadoop. It benchmarks these systems using Python, focusing on efficiency metrics such as time, memory, and CPU usage, and offers insights for database optimization.
 
 # Data Persistence and Performance Benchmarking Suite
 
