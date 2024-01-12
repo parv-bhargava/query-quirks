@@ -42,10 +42,30 @@ The methodology for the "Data Persistence and Performance Benchmarking Suite" pr
 5. **Main Execution Script (main.py):** The main.py script is the driver script that orchestrates the benchmarking process. It calls the necessary functions to run benchmarks and plot results, ensuring a streamlined execution of the project.
 
 ### Database Systems Under Study
-- **SQL**: [Add details]
-- **MongoDB**: [Add details]
-- **Neo4J**: [Add details]
-- **Hadoop**: [Add details]
+In this benchmarking project, we delve into four distinct database systems, each with its unique architecture and use cases. Understanding these systems' inherent characteristics is essential to comprehend the results and implications of our performance.
+
+#### SQL (Structured Query Language) Database Systems
+1. **Overview:** SQL databases, also known as Relational Database Management Systems (RDBMS), represent a traditional approach to data management. They use a structured query language for defining and manipulating data. SQL databases are characterized by their table-based structure, with data organized in rows and columns.
+2. **Typical Use Cases:** These databases are ideal for applications requiring complex transactions, data integrity, and a structured schema. Examples include banking systems, CRM applications, and any system where data relationships and integrity are paramount.
+3. **Key Characteristics:** SQL databases excel in ACID (Atomicity, Consistency, Isolation, Durability) properties, ensuring reliable transaction processing and data accuracy.
+   
+#### MongoDB
+1. **Overview:** MongoDB is a leading NoSQL database known for its document-oriented approach. It stores data in JSON-like documents with dynamic schemas, offering more flexibility than traditional SQL databases.
+2. **Typical Use Cases:** It is well-suited for applications that require rapid development, horizontal scalability, and the handling of diverse and unstructured data. Common examples include content management systems, real-time analytics, and applications dealing with large volumes of data without a fixed schema.
+3. **Key Characteristics:** MongoDB is celebrated for its scalability, flexible schema design, and efficient handling of large volumes of diverse data.
+
+#### Neo4J
+1. **Overview:** Neo4J is a graph database designed for managing and querying complex networks of data. Its data
+model is centred around nodes, relationships, and properties, making it highly efficient for relational analytics.
+2. **Typical Use Cases:** This database is ideal for scenarios where relationships between data points are as crucial as the data itself. It finds extensive use in social networking applications, fraud detection, recommendation engines, and network and IT operations.
+3. **Key Characteristics:** Neo4J excels in uncovering patterns and insights within connected data, offering high-performance traversal and querying of complex relationships.
+
+#### Hadoop
+1. **Overview:** Hadoop is not a database but a distributed file system (HDFS) and processing framework. It's included in this study due to its significant role in big data analytics and storage.
+2. **Typical Use Cases:** Hadoop is predominantly used for storing and processing vast amounts of data in a distributed computing environment. It is ideal for applications requiring high throughput, fault tolerance, and scalability, such as big data analytics, data warehousing, and large-scale indexing.
+3. **Key Characteristics:** Hadoop's strength lies in its ability to handle petabytes of data across multiple nodes, offering robust data processing capabilities and scalability.
+
+Each of these systems brings distinct advantages and challenges to the table. By studying their performance under various conditions, this project aims to provide a nuanced understanding of their suitability for different data management requirements. This analysis will not only assist in selecting the appropriate technology for specific applications but will also contribute to the broader field of database management and optimization.
 
 ## Results and Analysis
 [Add your results and analysis here]
