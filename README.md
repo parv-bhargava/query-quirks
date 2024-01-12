@@ -68,7 +68,7 @@ model is centred around nodes, relationships, and properties, making it highly e
 Each of these systems brings distinct advantages and challenges to the table. By studying their performance under various conditions, this project aims to provide a nuanced understanding of their suitability for different data management requirements. This analysis will not only assist in selecting the appropriate technology for specific applications but will also contribute to the broader field of database management and optimization.
 
 ## Results and Analysis
-[Add your results and analysis here]
+In the "Results and Analysis" section, we present and interpret our study findings on SQL, MongoDB, Neo4J, and Hadoop databases. We focus on time efficiency, memory usage, and CPU utilization to understand each system's capabilities. This comparative analysis informs database technology choices, emphasizing operational strengths and constraints. Here, we offer a concise yet comprehensive review of our results and their practical implications in data management.
 
 ### Time Efficiency Results
 <p align="center">
@@ -193,5 +193,15 @@ We express our deepest gratitude to Professor Hazim Shatnawi for their unwaverin
 Additionally, we extend heartfelt appreciation to each member of our group whose dedication, collaboration, and diverse expertise were instrumental in the realization of this project. Our collective effort and synergy underscore the strength of teamwork and collaboration in achieving complex objectives.
 
 ## References
-[Add your references here]
+- Wiseso, L. G., Imrona, M., & Alamsyah, A. (2020, October). Performance analysis of Neo4j, MongoDB, and PostgreSQL on 2019 national election big data management database. In 2020 6th International Conference on Science in Information Technology (ICSITech) (pp. 91-96). IEEE.
+
+- Sharma, M., Sharma, V. D., & Bundele, M. M. (2018, November). Performance analysis of RDBMS and no SQL databases: PostgreSQL, MongoDB and Neo4j. In 2018 3rd International Conference and Workshops on Recent Advances and Innovations in Engineering (ICRAIE) (pp. 1-5). IEEE.
+
+- Do, T. T. T., Mai-Hoang, T. B., Nguyen, V. Q., & Huynh, Q. T. (2022, December). Query-based Performance Comparison of Graph Database and Relational Database. In Proceedings of the 11th International Symposium on Information and Communication Technology (pp. 375-381).
+
+- Stackoverflow
+- pymngo
+-  neo4J
+- sqlalchemy
+- NYU Taxi Data
 
