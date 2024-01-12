@@ -23,6 +23,7 @@ The primary objective of this project, "Data Persistence and Performance Benchma
 This information is crucial for understanding the suitability of each database for different types of applications, especially those with limited computational resources.
 
 By achieving these objectives, this project intends to offer a comprehensive understanding of the performance dynamics of these database systems. The results are expected to guide database administrators, system architects, and developers in making informed choices about the right database technology for their specific requirements. Whether it's for a high-traffic web application, a complex data analytics task, or efficient handling of large-scale distributed data, this study aims to provide critical insights that will aid in the optimization of data management strategies across various industries and applications
+
 ## Methodology
 The methodology for the "Data Persistence and Performance Benchmarking Suite" project is structured around a series of Python scripts designed to automate data loading, query execution, and performance measurement across four different database systems: SQL, MongoDB, Neo4J, and Hadoop.
 
